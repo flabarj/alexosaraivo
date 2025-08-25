@@ -34,7 +34,7 @@ function dizerNomeDoUsuario(nomeUsuario) {
   }
 }
 
-// NOVA: pede o nome até ser válido
+
 function pedirNomeUsuario() {
   let nome;
   do {
@@ -76,7 +76,7 @@ function somarDistanciaComWhile(inicio, fim) {
   console.log("Soma final de " + inicio + " até " + fim + ": " + soma);
 }
 
-// [5] DO..WHILE com suas mensagens: errou -> “procura no ChatGPT”; acertou -> “Aplausos.”
+ 
 function validarNumeroMaiorQueDez() {
   let numero;
   do {
@@ -89,14 +89,12 @@ function validarNumeroMaiorQueDez() {
   console.log("Aplausos. Número válido: " + numero + ".");
 }
 
-// -------------------------
-// Programa principal (nome ANTES do menu)
-// -------------------------
+
 
 mostrarCabecalho();
 apresentarAssistente("Alexo Saraiva");
 
-// CORRIGIDO: insiste no nome até ficar ok
+
 let nomeUsuario = pedirNomeUsuario();
 dizerNomeDoUsuario(nomeUsuario);
 
