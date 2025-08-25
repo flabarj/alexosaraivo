@@ -34,6 +34,18 @@ function dizerNomeDoUsuario(nomeUsuario) {
   }
 }
 
+// NOVA: pede o nome até ser válido
+function pedirNomeUsuario() {
+  let nome;
+  do {
+    nome = prompt("Qual é o seu nome? ");
+    if (!nome || nome.trim() === "") {
+      console.log("Nome vazio? Se liga. Digita um nome decente.");
+    }
+  } while (!nome || nome.trim() === "");
+  return nome.trim();
+}
+
 function mostrarHoraFicticia() {
   console.log("Hora? Tô com preguiça. Olha no seu computador ou no celular, vai....");
 }
@@ -64,26 +76,28 @@ function somarDistanciaComWhile(inicio, fim) {
   console.log("Soma final de " + inicio + " até " + fim + ": " + soma);
 }
 
+// [5] DO..WHILE com suas mensagens: errou -> “procura no ChatGPT”; acertou -> “Aplausos.”
 function validarNumeroMaiorQueDez() {
   let numero;
   do {
     const texto = prompt("Digite um número MAIOR que 10: ");
     numero = parseInt(texto);
-
     if (isNaN(numero) || numero <= 10) {
       console.log("Não! Procura no ChatGPT e tenta de novo.");
     }
   } while (isNaN(numero) || numero <= 10);
-
   console.log("Aplausos. Número válido: " + numero + ".");
 }
 
+// -------------------------
+// Programa principal (nome ANTES do menu)
+// -------------------------
 
 mostrarCabecalho();
 apresentarAssistente("Alexo Saraiva");
 
-
-let nomeUsuario = prompt("Qual é o seu nome? ");
+// CORRIGIDO: insiste no nome até ficar ok
+let nomeUsuario = pedirNomeUsuario();
 dizerNomeDoUsuario(nomeUsuario);
 
 let continuar = true;
@@ -129,5 +143,5 @@ while (continuar === true) {
       break;
   }
 
-  console.log(); 
+  console.log(); // espaçamento
 }
