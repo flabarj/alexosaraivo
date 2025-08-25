@@ -64,12 +64,21 @@ function somarDistanciaComWhile(inicio, fim) {
   console.log("Soma final de " + inicio + " até " + fim + ": " + soma);
 }
 
+// [5] DO..WHILE: validar número > 10
+// regra: se errar (<=10 ou NaN) → "procura no ChatGPT" e pergunta de novo
+//        quando acertar (>10) → "Aplausos." e finaliza
 function validarNumeroMaiorQueDez() {
   let numero;
   do {
-    numero = parseInt(prompt("Digite um número maior que 10: "));
-  } while (numero <= 10);
-  console.log("Você digitou: " + numero);
+    const texto = prompt("Digite um número MAIOR que 10: ");
+    numero = parseInt(texto);
+
+    if (isNaN(numero) || numero <= 10) {
+      console.log("Não? Procura no ChatGPT e tenta de novo.");
+    }
+  } while (isNaN(numero) || numero <= 10);
+
+  console.log("Aplausos. Número válido: " + numero + ".");
 }
 
 // -------------------------
@@ -79,7 +88,7 @@ function validarNumeroMaiorQueDez() {
 mostrarCabecalho();
 apresentarAssistente("Alexo Saraiva");
 
-// >>> Primeiro pega o nome do usuário (ANTES do menu)
+// pega o nome antes do menu (exigência do professor)
 let nomeUsuario = prompt("Qual é o seu nome? ");
 dizerNomeDoUsuario(nomeUsuario);
 
