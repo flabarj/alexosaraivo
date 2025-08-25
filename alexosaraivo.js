@@ -35,12 +35,12 @@ function dizerNomeDoUsuario(nomeUsuario) {
 }
 
 function mostrarHoraFicticia() {
-  console.log("Hora? Eu não sei a hora. Olha no seu computador ou no celular, vai.");
+  console.log("Hora? Tô com preguiça. Olha no seu computador ou no celular, vai....");
 }
 
 function contarCuriosidade() {
   console.log("Curiosidade: a profissão de programador vive cercada de síndromes; uma famosa é a 'síndrome do impostor'.");
-  console.log("Que não é o seu caso, porque você já tem plena certeza de que não sabe nada. Se liga.");
+  console.log("Que não é o seu caso, porque você já tem plena certeza de que não sabe nada.");
 }
 
 function contarDeUmAteNComFor(n) {
@@ -64,9 +64,6 @@ function somarDistanciaComWhile(inicio, fim) {
   console.log("Soma final de " + inicio + " até " + fim + ": " + soma);
 }
 
-// [5] DO..WHILE: validar número > 10
-// regra: se errar (<=10 ou NaN) → "procura no ChatGPT" e pergunta de novo
-//        quando acertar (>10) → "Aplausos." e finaliza
 function validarNumeroMaiorQueDez() {
   let numero;
   do {
@@ -74,21 +71,18 @@ function validarNumeroMaiorQueDez() {
     numero = parseInt(texto);
 
     if (isNaN(numero) || numero <= 10) {
-      console.log("Não? Procura no ChatGPT e tenta de novo.");
+      console.log("Não! Procura no ChatGPT e tenta de novo.");
     }
   } while (isNaN(numero) || numero <= 10);
 
   console.log("Aplausos. Número válido: " + numero + ".");
 }
 
-// -------------------------
-// Programa principal (nome ANTES do menu)
-// -------------------------
 
 mostrarCabecalho();
 apresentarAssistente("Alexo Saraiva");
 
-// pega o nome antes do menu (exigência do professor)
+
 let nomeUsuario = prompt("Qual é o seu nome? ");
 dizerNomeDoUsuario(nomeUsuario);
 
@@ -135,5 +129,5 @@ while (continuar === true) {
       break;
   }
 
-  console.log(); // espaçamento
+  console.log(); 
 }
