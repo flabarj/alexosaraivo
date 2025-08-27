@@ -132,7 +132,7 @@ while (continuar === true) {
       break;
 
     case "6":
-      console.log("Saindo. Faz-me um favor e estuda mais um pouco.");
+      console.log("Saindo. Pergunta idiota, tolerância zero!.");
       continuar = false;
       break;
 
